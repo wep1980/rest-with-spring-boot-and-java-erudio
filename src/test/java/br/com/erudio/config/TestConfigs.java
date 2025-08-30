@@ -2,8 +2,8 @@ package br.com.erudio.config;
 
 public interface TestConfigs {
 
-    //int SERVER_PORT = 8888;
-    int SERVER_PORT = 80; // apontando os testes de integração para o container
+    int SERVER_PORT = 8888; // apontando os testes de integração para o container GTI Actions
+    //int SERVER_PORT = 80; // apontando os testes de integração para o container local
     String HEADER_PARAM_AUTHORIZATION = "Authorization";
     String HEADER_PARAM_ORIGIN = "Origin";
 
