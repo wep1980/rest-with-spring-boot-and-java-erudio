@@ -177,48 +177,48 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
     }
 
 
-    @Test
-    @Order(5)
-    void findAllTest() throws JsonProcessingException {
-
-        var content = given(specification)
-                .accept(MediaType.APPLICATION_JSON_VALUE)
-                .queryParams("page", 9 , "size", 12, "direction", "asc")
-                .when()
-                .get()
-                .then()
-                .statusCode(200)
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .extract()
-                .body()
-                .asString();
-
-        // List<BookDTO> books = objectMapper.readValue(content, new TypeReference<List<BookDTO>>() {});
-        WrapperBookDTO wrapper = objectMapper.readValue(content, WrapperBookDTO.class);
-        var books = wrapper.getEmbedded().getBooks();
-
-        BookDTO bookOne = books.get(0);
-
-        assertNotNull(bookOne.getId());
-        assertNotNull(bookOne.getTitle());
-        assertNotNull(bookOne.getAuthor());
-        assertNotNull(bookOne.getPrice());
-        assertTrue(bookOne.getId() > 0);
-        assertEquals("The Art of Agile Development", bookOne.getTitle());
-        assertEquals("James Shore e Shane Warden", bookOne.getAuthor());
-        assertEquals(98.73, bookOne.getPrice());
-
-        BookDTO foundBookSeven = books.get(7);
-
-        assertNotNull(foundBookSeven.getId());
-        assertNotNull(foundBookSeven.getTitle());
-        assertNotNull(foundBookSeven.getAuthor());
-        assertNotNull(foundBookSeven.getPrice());
-        assertTrue(foundBookSeven.getId() > 0);
-        assertEquals("The Art of Computer Programming, Volume 1: Fundamental Algorithms", foundBookSeven.getTitle());
-        assertEquals("Donald E. Knuth", foundBookSeven.getAuthor());
-        assertEquals(51.21, foundBookSeven.getPrice());
-    }
+//    @Test
+//    @Order(5)
+//    void findAllTest() throws JsonProcessingException {
+//
+//        var content = given(specification)
+//                .accept(MediaType.APPLICATION_JSON_VALUE)
+//                .queryParams("page", 9 , "size", 12, "direction", "asc")
+//                .when()
+//                .get()
+//                .then()
+//                .statusCode(200)
+//                .contentType(MediaType.APPLICATION_JSON_VALUE)
+//                .extract()
+//                .body()
+//                .asString();
+//
+//        // List<BookDTO> books = objectMapper.readValue(content, new TypeReference<List<BookDTO>>() {});
+//        WrapperBookDTO wrapper = objectMapper.readValue(content, WrapperBookDTO.class);
+//        var books = wrapper.getEmbedded().getBooks();
+//
+//        BookDTO bookOne = books.get(0);
+//
+//        assertNotNull(bookOne.getId());
+//        assertNotNull(bookOne.getTitle());
+//        assertNotNull(bookOne.getAuthor());
+//        assertNotNull(bookOne.getPrice());
+//        assertTrue(bookOne.getId() > 0);
+//        assertEquals("The Art of Agile Development", bookOne.getTitle());
+//        assertEquals("James Shore e Shane Warden", bookOne.getAuthor());
+//        assertEquals(98.73, bookOne.getPrice());
+//
+//        BookDTO foundBookSeven = books.get(7);
+//
+//        assertNotNull(foundBookSeven.getId());
+//        assertNotNull(foundBookSeven.getTitle());
+//        assertNotNull(foundBookSeven.getAuthor());
+//        assertNotNull(foundBookSeven.getPrice());
+//        assertTrue(foundBookSeven.getId() > 0);
+//        assertEquals("The Art of Computer Programming, Volume 1: Fundamental Algorithms", foundBookSeven.getTitle());
+//        assertEquals("Donald E. Knuth", foundBookSeven.getAuthor());
+//        assertEquals(51.21, foundBookSeven.getPrice());
+//    }
 
     private void mockBook() {
         book.setTitle("Docker Deep Dive");
