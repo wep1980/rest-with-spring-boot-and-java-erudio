@@ -2,7 +2,9 @@ package br.com.erudio.integrationtests.controller.cors.withjson;
 
 import br.com.erudio.config.TestConfigs;
 import br.com.erudio.integrationtests.container.AbstractIntegrationTest;
+import br.com.erudio.integrationtests.dto.AccountCredentialsDTO;
 import br.com.erudio.integrationtests.dto.PersonDTO;
+import br.com.erudio.integrationtests.dto.TokenDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,12 +19,8 @@ import org.springframework.http.MediaType;
 
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
-
-import br.com.erudio.integrationtests.dto.AccountCredentialsDTO;
-import br.com.erudio.integrationtests.dto.TokenDTO;
-
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
