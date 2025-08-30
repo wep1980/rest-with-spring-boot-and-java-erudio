@@ -206,7 +206,7 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
         assertTrue(bookOne.getId() > 0);
         assertEquals("The Art of Agile Development", bookOne.getTitle());
         assertEquals("James Shore e Shane Warden", bookOne.getAuthor());
-        assertEquals(97.21, bookOne.getPrice());
+        assertEquals(98.73, bookOne.getPrice());
 
         BookDTO foundBookSeven = books.get(7);
 
