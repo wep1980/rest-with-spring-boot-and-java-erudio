@@ -31,8 +31,8 @@ jobs:
       run: mvn clean package
 
     - name: Docker Compose Build
-      working-directory: ./
-      run: docker compose build
+      working-directory: ${{ github.workspace }}
+      run: docker compose -f docker-compose.yml build
 
     - name: Push to Docker Hub Container Registry
       run: |
