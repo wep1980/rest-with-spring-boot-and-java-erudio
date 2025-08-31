@@ -18,8 +18,6 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: ${JDBC_URL} # Esta sendo passado nas variaveis de ambiente do run configuration
-    #url: jdbc:mysql://localhost:3306/rest_with_spring_boot_erudio?useTimezone=true&serverTimezone=UTC
-    #url: jdbc:mysql://erudio-db-server.ctkc8wg2wuac.us-east-2.rds.amazonaws.com/rest_with_spring_boot_erudio?useTimezone=true&serverTimezone=UTC
     username: root
     password: rds02061625
   jpa:
