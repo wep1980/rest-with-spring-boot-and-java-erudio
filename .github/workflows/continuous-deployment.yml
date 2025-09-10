@@ -39,7 +39,7 @@ jobs:
       run: echo "export USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> $GITHUB_ENV
 
     - name: Configure GKE Cluster Access
-      run: gcloud container clusters get-credentials erudio-cluster --region us-central1 --project ${{ secrets.PROJECT_ID}}
+      run: gcloud container clusters get-credentials erudio-cluster-cluster --region us-central1 --project ${{ secrets.PROJECT_ID}}
 
     - name: Configure Docker Authentication for Google Cloud Artifact Registry
       run: gcloud auth configure-docker us-central1-docker.pkg.dev
